@@ -11,6 +11,7 @@ class HelloController extends Controller
     public function top(Request $request)
     {
         return redirect()->route('hello.index');
+        
     }
     public function index(Item $item)
     {
