@@ -36,7 +36,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => ['auth']], function(){
-    Route::resource('/hello','HelloController');
+    Route::resource('/hello','HelloController', ['only' => ['index', 'show','create', 'edit', 'store' ]]);
+    Route::post('/hello/edit','HelloController@update');
+    Route::post('/hello/delete','HelloController@destroy');
     Route::get('/','HelloController@top');
     // Route::resource('information' , 'HelloController@' ); 
 //   　Route::resource('school' , 'SchoolsController' ,['only' => ['create', 'edit']] ); 
