@@ -2,8 +2,8 @@
 
     <form action='{{ route('hello.store') }}' method='post'>
         {{ csrf_field() }}
-            名前：<input type='text' name='name'><br>
-            メールアドレス：<input type='text' name='mail'><br>
-            年齢：<input type='text' name='age'><br>
+            <input type='hidden' name='user_id' value="{{$user->id}}"><br>
+            商品名：<input type='text' name='name'><br>
+            説明：<input type='text' name='text'><br>
             <input type='submit' value='投稿'>
     </form>

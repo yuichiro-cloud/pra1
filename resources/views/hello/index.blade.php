@@ -21,7 +21,7 @@
   <h1>一覧ページ</h1>
   <div class="items">
     @foreach ($msg as $value)
-    <div link><a href="/hello/{{$value->id}}">名前:{{$value->name}}さん</a></div>
+    <div link><a href="/hello/{{$value->id}}">商品名:{{$value->name}}</a></div>
     @endforeach
   </div>
 </body>

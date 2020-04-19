@@ -31,29 +31,31 @@ class HelloController extends Controller
     }
     public function create()
     {
-        return view('hello.create');
+        $user = Auth::user();
+        return view('hello.create', ['user'=>$user]);
     }
     
     public function store(Request $request)
     {
         $item = new Item;
         $item->name = $request->name;
-        $item->mail = $request->mail;
-        $item->age = $request->age;
+        $item->text = $request->text;
+        $item->user_id = $request->user_id;
         $item->save();
         return redirect('/hello');
     }
 
     public function edit(Request $request, $id) {
         $item = Item::find($id);
-        return view('hello.edit', ['item' => $item]);
+        $user = Auth::user();
+        return view('hello.edit', ['item' => $item ,'user'=>$user]);
     }
 
     public function update(Request $request) {
         $item = Item::find($request->id);
         $item->name = $request->name;
-        $item->mail = $request->mail;
-        $item->age = $request->age;
+        $item->text = $request->text;
+        $item->user_id = $request->user_id;
         $item->save();
         return redirect('/');
     }
