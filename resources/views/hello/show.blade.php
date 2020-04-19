@@ -9,6 +9,7 @@
   <p>名前:{{$item->name}}</p>
   <p>メールアドレス:{{$item->mail}}</p>
   <p>年齢:{{$item->age}}</p>
+  <p>ユーザー名:{{$user->name}}</p>
   <a href="/hello/{{$item->id}}/edit">編集はこちら</a>
   <!-- <input type='hidden' name='id' value='{{ $item->id }}'> -->
   <form action='/hello/delete' method='post'>

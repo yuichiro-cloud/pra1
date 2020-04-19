@@ -11,9 +11,7 @@
     </div>
     <div class="rightbox">
       <div class="logout">
-        <a href="/logout">
-        ログアウト
-        </a>
+        <a href='home'>HOME</a>
       </div>
       <div class="post">
         <a href="/hello/create">新規投稿はこちら</a>

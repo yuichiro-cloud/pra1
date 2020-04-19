@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Item;
+use Illuminate\Support\Facades\Auth;
 
 class HelloController extends Controller
 {
@@ -24,8 +25,9 @@ class HelloController extends Controller
     {
         $data = [
             $item = Item::find($id),
+            $user = Auth::user(),
         ];
-        return view('hello.show',  ['item' => $item]);
+        return view('hello.show',  ['item' => $item, 'user'=>$user]);
     }
     public function create()
     {
